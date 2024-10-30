@@ -16,6 +16,8 @@ int main()
     int m = m_max;
     int col = 0;
     int raw = 0;
+    int sum = 0;
+    int number = 0;
     int index;
     int nm_array[n_max][m_max];
 
@@ -54,17 +56,19 @@ int main()
     }
 
     // заполняем массив
+        srand(time(0));
+
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            nm_array[i][j] = i+j;
+            nm_array[i][j] = rand() % 90 + 10;
         }
     }
 
     // новая строка и левый верхний отступ
     cout << "\n\t";
-    
+
     // выводим номера столбцов
     for (int i = 1; i < m + 1; i++)
     {
@@ -104,20 +108,30 @@ int main()
         {
             cout << "Вы ввели: столбец №" << index << '\n';
             cout << "В столбце №" << index << " содержатся следующие числа:\n";
-            for (int i=0; i<n; i++ ) {
-                cout << nm_array[i][index-1] << '\t';
+            for (int i = 0; i < n; i++)
+            {
+                number = nm_array[i][index - 1];
+                sum += number;
+                cout << number << '\t';
             }
             cout << '\n';
+            cout << "Сумма чисел: " << sum << '\n';
+            exit(0);
         }
         // иначе, это строка
         else if (index < n + m + 1)
         {
             cout << "Вы ввели: строка №" << index << '\n';
             cout << "В строке №" << index << " содержатся следующие числа:\n";
-            for (int i=0; i<m; i++ ) {
-                cout << nm_array[index-1][i] << '\t';
+            for (int i = 0; i < m; i++)
+            {
+                number = nm_array[index - m - 1][i];
+                sum += number;
+                cout << number << '\t';
             }
             cout << '\n';
+            cout << "Сумма чисел: " << sum << '\n';
+            exit(0);
         }
         // вышли за допустимые пределы
         else
