@@ -5,6 +5,8 @@
 // double: “ и так далее, а в конце выводит “You entered: 5 3.14 random_string “ и так
 // далее.
 
+// https://github.com/A-l-E-v/CPP_Synergy/blob/main/U-365/types.cpp
+
 #include <iostream>
 
 using namespace std;

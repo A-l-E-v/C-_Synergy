@@ -4,6 +4,8 @@
 // строки или столбца, а программа выводит сумму числе в соответствующей строке
 // или соответствующем столбце.
 
+// https://github.com/A-l-E-v/CPP_Synergy/blob/main/U-365/nm_array.cpp
+
 #include <iostream>
 
 using namespace std;

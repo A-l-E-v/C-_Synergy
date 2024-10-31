@@ -1,6 +1,8 @@
 // Пользователь вводит 2 целых числа, программа должна вывести “YES”, если хотя
 // бы одно из чисел чётное, или “NO”, если все числа нечётные.
 
+// https://github.com/A-l-E-v/CPP_Synergy/blob/main/U-365/even.cpp
+
 #include <iostream>
 
 using namespace std;

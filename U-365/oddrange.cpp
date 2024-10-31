@@ -1,6 +1,8 @@
 // Пользователь вводит 2 целых числа, которые задают диапазон. Через пробел
 // вывести в консоль все нечётные числа из этого диапазона.
 
+// https://github.com/A-l-E-v/CPP_Synergy/blob/main/U-365/oddrange.cpp
+
 #include <iostream>
 
 using namespace std;
