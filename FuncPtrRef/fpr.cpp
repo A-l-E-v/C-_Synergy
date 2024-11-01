@@ -20,8 +20,21 @@ void print_function (){
     cout << "\n===> Print Function has been called! <===\n";
 }
 
+void print_x (int x){
+    cout << "\n===> Print X <===\n" << "x=" << x;
+}
+
+void another_print_function (){
+    cout << "\n===> AAANNNOOOOTHHHEEERRR Print Function has been called! <===\n";
+}
+
+
 void any_function_call (void (*ptr)()){
     ptr();
+}
+
+void x_function_call (void (*ptr)(int x)){
+    ptr(3);
 }
 
 int main()
@@ -49,4 +62,10 @@ int main()
     cout << "\nPointers to functions\n";
     void (*fp)() = print_function;
     any_function_call(*fp);
+
+    fp = another_print_function;
+    any_function_call(fp);
+
+    void (*p)(int) = print_x;
+    x_function_call(p);
 }
