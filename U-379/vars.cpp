@@ -16,5 +16,30 @@ using namespace std;
 
 int main()
 {
+int a;
+double b;
+char c;
+bool d;
+string e;
+
+cout << "Введите int: ";
+cin >> a;
+
+cout << "Введите double: ";
+cin >> b;
+
+cout << "Введите char: ";
+cin >> c;
+
+cout << "Введите bool (1|0): ";
+cin >> d;
+
+cout << "Введите string: ";
+cin >> e;
+
+cout << "\nВы ввели следующие переменные:\n";
+cout << a << " " << b << " " << c << " " << d << " " << e << "\n";
+
+return 0;
 
 }
