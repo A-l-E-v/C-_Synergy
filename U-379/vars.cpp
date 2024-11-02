@@ -8,6 +8,8 @@
 // 	Протестируйте программу. Сделайте скриншот консоли после выполнения всей
 // программы и отправьте его преподавателю.
 
+// https://github.com/A-l-E-v/CPP_Synergy/blob/main/U-379/vars.cpp
+
 #include <iostream>
 
 using namespace std;
