@@ -14,5 +14,18 @@ using namespace std;
 
 int main()
 {
+int x;
 
+cout << "\nВведите целое число: ";
+cin >> x;
+
+if (x % 2 == 0) {
+cout << "\nЧисло: " << x << " чётное.\n";
+
+} else {
+cout << "\nЧисло: " << x << " нечётное.\n";
+
+}
+
+return 0;
 }
