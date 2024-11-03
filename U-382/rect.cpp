@@ -10,45 +10,40 @@ using namespace std;
 class Rectangle
 {
 private:
-double h; //высота
-double w; //ширина
+    double h; // высота
+    double w; // ширина
 
 public:
-//конструктор
-    Rectangle(double height, double width) {
-         h = height;
-         w = width;
+    // конструктор
+    Rectangle(double height, double width)
+    {
+        h = height;
+        w = width;
     }
 
-    double Area () {
-        return h*w;
+    double Area()
+    {
+        return h * w;
     }
 
-double Perimeter () {
-    return 2*(w+h);
-}
+    double Perimeter()
+    {
+        return 2 * (w + h);
+    }
 };
-
-
-
 
 int main()
 {
-double width, height;
-cout << "\n\n --- Периметр и площадь прямоугольника ---\n\n";
-cout << "\nВведите высоту прямоугольника: ";
-cin >> height;
+    double width, height;
+    cout << "\n\n --- Периметр и площадь прямоугольника ---\n\n";
+    cout << "\nВведите высоту прямоугольника: ";
+    cin >> height;
 
-cout << "Введите ширину прямоугольника: ";
-cin >> width;
+    cout << "Введите ширину прямоугольника: ";
+    cin >> width;
 
-Rectangle rect (height, width);
+    Rectangle rect(height, width);
 
-cout << "\nПериметр прямоугольника: " << rect.Perimeter() << endl;
-cout << "\nПлощадь прямоугольника: " << rect.Area() << endl;
-
-
-
+    cout << "\nПериметр прямоугольника: " << rect.Perimeter() << endl;
+    cout << "\nПлощадь прямоугольника: " << rect.Area() << endl;
 }
-
-
