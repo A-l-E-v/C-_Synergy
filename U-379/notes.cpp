@@ -40,7 +40,7 @@ int menu_entry = 1;
 void create_note()
 {
 
-    cout << "\nВведите текст новой заметки!\n";
+    cout << "\nВведите текст новой заметки: ";
     cin.ignore();
     getline(cin, note_text);
 
@@ -55,6 +55,8 @@ void create_note()
     fstream file_w(full_path, ios_base::out);
     file_w << note_text << endl;
     file_w.close();
+
+    return;
 }
 
 void show_note(int menu_entry)
@@ -69,6 +71,8 @@ void show_note(int menu_entry)
         cout << "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
         note_file.close();
     }
+
+    return;
 }
 
 int main()
@@ -76,7 +80,7 @@ int main()
 
     while (!quit)
     {
-        cout << "Ваши заметки:\n";
+        cout << "\n\nВаши заметки:\n";
 
         for (const auto &entry : fs::directory_iterator(path))
         {
@@ -103,7 +107,7 @@ int main()
             break;
         }
         case -1:
-            cout << "\nВыходим из программы!\n";
+            cout << "\nУдачного дня!\n";
             return 0;
             break;
 
