@@ -1,16 +1,15 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class Human
 {
 
-
 public:
     string name;
 
 private:
-
 public:
     Human()
     {
@@ -23,12 +22,12 @@ public:
         cout << "Human(string& name) constructor" << endl;
     }
 
-    ~Human()
+    virtual ~Human()
     {
         cout << "~Human() destructor" << endl;
     }
 
-    void work()
+    virtual void work()
     {
         cout << "void work() in Human class " << name << " works" << endl;
     }
@@ -41,16 +40,53 @@ public:
     }
 };
 
-class Doctor : public Human
+class Job
 {
 
 public:
-    Doctor()
+    string job;
+    int salary = 0;
+
+private:
+public:
+    Job()
+    {
+        job = "job name";
+        cout << "Job() default constructor" << endl;
+    };
+
+    Job(const string &job) : job(job)
+    {
+        cout << "Job(string& job) constructor" << endl;
+    }
+
+     Job(const int &salary) : salary(salary)
+    {
+        cout << "Job(string& job) constructor" << endl;
+    }
+
+    ~Job()
+    {
+        cout << "~Job() destructor" << endl;
+    }
+
+
+    string get_job()
+    {
+        return job;
+    }
+};
+
+class Doctor : public Human, public Job
+{
+
+public:
+    Doctor() : Human ("Doctor's name")
     {
         cout << "Doctor() default constructor" << endl;
     }
 
-    Doctor(const string &name, int num) : Human(name), num_patients(num)
+    Doctor(const string &name, int salary, int num) : Human(name), Job(salary), num_patients(num)
     {
         cout << "Doctor(string& name, int name) constructor" << endl;
     };
@@ -59,9 +95,9 @@ public:
         cout << "~Doctor() destructor" << endl;
     }
 
-     void work()
+    void work() override
     {
-        cout << "Doctor " << name << " works" << endl;
+        cout << "Doctor {work() in Doctor class} " << name << " works " << salary << " $ salary." << endl;
     }
 
 public:
@@ -88,16 +124,44 @@ int main()
     cout << "\nget_name(h) " << h.get_name() << endl;
     cout << "\nget_name(h_a) " << h_a.get_name() << endl;
 
-    Doctor d;
-    Doctor w("Who", 10);
-    d.work();
-    w.work();
+    // Doctor d;
+    // Doctor w("Who", 10, 1000);
+    // d.work(10);
+    // w.work(16);
 
-    Human* k;
+    Human *k;
     k = new Human();
     cout << "k=" << k << endl;
     k->work();
     delete k;
+
+    // Doctor *kd;
+    // kd = new Doctor();
+    // cout << "kd=" << kd << endl;
+    // kd->work(32);
+    // delete kd;
+
+
+    vector<Human*> people;
+// people.push_back(new Doctor());
+// people.push_back(new Doctor("Who", 10, 2000));
+// people.push_back(new Human());
+// people.push_back(new Human("Liza"));
+
+// people[0]->work();
+// people[1]->work();
+// people[2]->work();
+// people[3]->work();
+
+// for (size_t i = 0; i < 4; i++)
+// {
+// delete people[i];
+// }
+
+
+people.push_back(new Doctor("Kurpatov", 10, 2000));
+people[0]->work();
+delete people[0];
 
 
 }
