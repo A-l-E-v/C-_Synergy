@@ -3,7 +3,18 @@
 
 using namespace std;
 
-class Human
+class Object {
+    public:
+Object(){
+    cout << "Object()" << this << endl;
+}
+
+~Object(){
+    cout << "~Object()"<< this << endl;
+}
+};
+
+class Human : virtual public Object
 {
 
 public:
@@ -40,7 +51,7 @@ public:
     }
 };
 
-class Job
+class Job : virtual public Object
 {
 
 public:
@@ -114,26 +125,26 @@ public:
 
 int main()
 {
-    Human h;
-    Human h_a("Sam");
-    h.work();
-    h_a.work();
-    cout << "\nh.get_name(h) " << h.get_name() << endl;
-    cout << "\nh_a.get_name(h_a) " << h_a.get_name() << endl;
+    // Human h;
+    // Human h_a("Sam");
+    // h.work();
+    // h_a.work();
+    // cout << "\nh.get_name(h) " << h.get_name() << endl;
+    // cout << "\nh_a.get_name(h_a) " << h_a.get_name() << endl;
 
-    cout << "\nget_name(h) " << h.get_name() << endl;
-    cout << "\nget_name(h_a) " << h_a.get_name() << endl;
+    // cout << "\nget_name(h) " << h.get_name() << endl;
+    // cout << "\nget_name(h_a) " << h_a.get_name() << endl;
 
     // Doctor d;
     // Doctor w("Who", 10, 1000);
     // d.work(10);
     // w.work(16);
 
-    Human *k;
-    k = new Human();
-    cout << "k=" << k << endl;
-    k->work();
-    delete k;
+    // Human *k;
+    // k = new Human();
+    // cout << "k=" << k << endl;
+    // k->work();
+    // delete k;
 
     // Doctor *kd;
     // kd = new Doctor();
@@ -163,5 +174,14 @@ people.push_back(new Doctor("Kurpatov", 10, 2000));
 people[0]->work();
 delete people[0];
 
+// ((Doctor*)people[0])->work();
+// ((Job*)people[0])->work();
+
+// ((Job*)((Doctor*)people[0]))->work();
+
+Doctor d;
+Human h = (Human)d;
+cout << h.name << endl;
+h.work();
 
 }
