@@ -1,3 +1,9 @@
+// Задание No3: Создайте вектор целых чисел и заполните его случайными
+// значениями. Затем отсортируйте вектор в порядке возрастания и выведите его
+// содержимое на экран.
+
+// https://github.com/A-l-E-v/CPP_Synergy/tree/main/U-387
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
