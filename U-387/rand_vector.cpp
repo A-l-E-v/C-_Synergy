@@ -22,8 +22,9 @@ int main()
     for (size_t i = 0; i < 10; i++)
     {
         numbers.push_back(rand() % 100);
-        sort(numbers.begin(), numbers.end());
     }
+
+    sort(numbers.begin(), numbers.end());
 
     for (int number : numbers)
     {
