@@ -8,6 +8,8 @@
 // количеству товара. Сделать классы шаблонными чтобы стоимость единицы товара
 // могла быть любым подходящим типом данных. Протестируйте работу классов.
 
+// https://github.com/A-l-E-v/CPP_Synergy/blob/main/U-3810/product.cpp
+
 #include <iostream>
 
 using namespace std;
